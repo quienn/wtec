@@ -1,44 +1,56 @@
 package wtec;
 
+import java.time.LocalDateTime;
 import java.util.Scanner;
 
-public class Item {
+public class Item implements Model {
 
-    Scanner sc = new Scanner(System.in);
-    private String nameItem;
-    private String codeItem;
+    private String name;
+    private String code;
     private int amount;
     private boolean expendable;
+    private LocalDateTime created;
 
-    public Item(String nameItem, String codeItem, int amount, boolean expendable) {
-        this.nameItem = nameItem;
-        this.codeItem = codeItem;
-        this.amount = amount;
-        this.expendable = expendable;
+    public Item() {
+        this.name = "";
+        this.code = "";
+        this.amount = 0;
+        this.expendable = false;
+        this.created = LocalDateTime.now();
     }
 
-    public Scanner getSc() {
-        return sc;
+    @Override
+    public void scan(Scanner sc) {
+        // @TODO Pedir datos aquí. De mientras nada porque quiero probar lo de la serialización
     }
 
-    public void setSc(Scanner sc) {
-        this.sc = sc;
+    @Override
+    public void print() {
+        // @TODO Mostrar datos aquí. De mientras nada porque quiero probar lo de la serialización
     }
 
-    public String getNameItem() {
-        return nameItem;
+    public LocalDateTime getCreated() {
+        return created;
     }
 
-    public void setNameItem(String nameItem) {
-        this.nameItem = nameItem;
+    public void setCreated(LocalDateTime created) {
+        this.created = created;
     }
 
-    public String getCodeItem() {
-        return codeItem;
+    public String getName() {
+        return name;
     }
 
-    public void setCodeItem(String codeItem) {
-        this.codeItem = codeItem;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
     }
 
     public int getAmount() {
