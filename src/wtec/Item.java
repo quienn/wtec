@@ -22,11 +22,36 @@ public class Item implements Model {
     @Override
     public void scan(Scanner sc) {
         // @TODO Pedir datos aquí. De mientras nada porque quiero probar lo de la serialización
+        String cons = "";
+        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+        System.out.println("SECCION PARA REGISTRO DE NUEVOS MATERIALES EN EL ALMACEN");
+        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+        this.name = Prompt.forString(sc, "--------------------------------/nNombre del producto a registrar: \n--------------------------------", false);
+        System.out.println("----------------------------------------------------\nAsigne un codigo unico para el material a registrar: \n----------------------------------------------------");
+        this.code = sc.next();
+        this.amount = Prompt.forNumber(sc, "----------------------------------------------\nIngrese la cantidad de unidades del material: \n----------------------------------------------");
+
+        do {
+            
+            cons = Prompt.forString(sc, "---------------------------------------------------\nEs consumible el material a registrar: /n [S] O [N]\n---------------------------------------------------", false).toLowerCase();
+            if (!"s".equals(cons) || !"n".equals(cons)) {
+                System.out.println("Ingrese por favor solamente una de las 2 opciones: ");
+            } else {
+                if ("s".equals(cons)) {
+                    this.expendable = false;
+                } else {
+                    this.expendable = true;
+                }
+            }
+        } while ((!"s".equals(cons) || !"n".equals(cons)));
     }
 
     @Override
     public void print() {
         // @TODO Mostrar datos aquí. De mientras nada porque quiero probar lo de la serialización
+        System.out.println("Nombre: " + this.name);
+        System.out.println("Codigo del material: " + this.code);
+        System.out.println("Unidades disponibles: " + this.amount);
     }
 
     public LocalDateTime getCreated() {
