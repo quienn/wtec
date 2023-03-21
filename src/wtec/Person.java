@@ -21,14 +21,11 @@ public class Person implements Model {
 
     @Override
     public void scan(Scanner sc) {
-        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-        System.out.println("SECCION PARA REGISTRO DE UNA PERSONA");
-        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-        this.name = Prompt.forString(sc, "-------------------------------\nIngrese el nombre a registrar: \n-------------------------------", true);
-        this.age = Prompt.forNumber(sc, "-----------------------------\nIngrese la edad a registrar: \n-----------------------------");
-        this.sex = Prompt.forSex(sc, "------------------\nFacilite el sexo: \n------------------");
-        this.phone = Prompt.forPhoneNumber(sc, "-----------------------------------\nAhora introduzca el numero telefonico: \n-----------------------------------");
-        this.address = Prompt.forString(sc, "---------------------------------------\nAhora ingrese el domicilio pertinente: \n---------------------------------------", false);
+        this.name = Prompt.forString(sc, "Ingrese el nombre a registrar: ", true);
+        this.age = Prompt.forNumber(sc, "Ingrese la edad a registrar: ");
+        this.sex = Prompt.forSex(sc, "Facilite el sexo: ");
+        this.phone = Prompt.forPhoneNumber(sc, "Ahora introduzca el numero telefonico: ");
+        this.address = Prompt.forString(sc, "Ahora ingrese el domicilio pertinente: ", false);
     }
 
     @Override

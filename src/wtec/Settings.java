@@ -4,37 +4,31 @@ import java.io.Serializable;
 
 public class Settings implements Serializable {
 
-    private int staffCount;
-    private int alumniCount;
+    private int usersCount;
     private int itemsCount;
 
-    private int staffSize;
-    private int alumniSize;
+    private int usersSize;
     private int itemsSize;
 
     public Settings() {
-        this.staffCount = 0;
-        this.alumniCount = 0;
         this.itemsCount = 0;
-        this.staffSize = 0;
-        this.alumniSize = 0;
         this.itemsSize = 0;
     }
 
-    public int getStaffSize() {
-        return staffSize;
+    public int getUsersCount() {
+        return usersCount;
     }
 
-    public void setStaffSize(int staffSize) {
-        this.staffSize = staffSize;
+    public void setUsersCount(int usersCount) {
+        this.usersCount = usersCount;
     }
 
-    public int getAlumniSize() {
-        return alumniSize;
+    public int getUsersSize() {
+        return usersSize;
     }
 
-    public void setAlumniSize(int alumniSize) {
-        this.alumniSize = alumniSize;
+    public void setUsersSize(int usersSize) {
+        this.usersSize = usersSize;
     }
 
     public int getItemsSize() {
@@ -43,22 +37,6 @@ public class Settings implements Serializable {
 
     public void setItemsSize(int itemsSize) {
         this.itemsSize = itemsSize;
-    }
-
-    public int getStaffCount() {
-        return staffCount;
-    }
-
-    public void setStaffCount(int staffCount) {
-        this.staffCount = staffCount;
-    }
-
-    public int getAlumniCount() {
-        return alumniCount;
-    }
-
-    public void setAlumniCount(int alumniCount) {
-        this.alumniCount = alumniCount;
     }
 
     public int getItemsCount() {

@@ -26,9 +26,6 @@ public class Staff extends Person implements Model {
     @Override
     public void scan(Scanner sc) {
         super.scan(sc);
-        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-        System.out.println("SECCION PARA REGISTRO DE PERSONAL ADMINISTRATIVO");
-        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
         this.area = Prompt.forString(sc, "Ingrese su área: ", true);
         this.job = Prompt.forString(sc, "Ingrese su puesto: ", true);
         this.code = Prompt.forString(sc, "Ingrese su código: ", true);
