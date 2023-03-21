@@ -71,12 +71,14 @@ public class Main {
             items = new Item[settings.getItemsSize()];
         }
 
-        int opt = 0, newKindOpt = 0, queryKindOpt = 0;
+        int opt = 0, newKindOpt = 0, queryKindOpt = 0, itemKindOpt = 0, itemScanOpt = 0, itemPrintOpt = 0;
+
         do {
             System.out.println("+----------Usuarios----------+");
             System.out.println("1. Registrar...");
             System.out.println("2. Consultar...");
-            System.out.println("3. Salir");
+            System.out.println("3. Materiales...");
+            System.out.println("4. Salir");
 
             opt = Prompt.forNumber(scanner, "Ingrese una opción: ");
 
@@ -157,13 +159,71 @@ public class Main {
                         }
                     } while (queryKindOpt != 4);
                 }
+                //Menu de materiales
 
                 case 3 -> {
+
+                    do {
+                        System.out.println("+----------Materiales----------+");
+                        System.out.println("1. Registros...");
+                        System.out.println("2. Consulta...");
+                        System.out.println("3. Volver");
+                        itemKindOpt = Prompt.forNumber(scanner, "Ingrese una opcion del menu ");
+
+                        switch (itemKindOpt) {
+                            case 1 -> {
+
+                                do {
+                                    System.out.println("+----------Registros de materiales----------+");
+                                    System.out.println("1. Registro de material...");
+                                    System.out.println("2. Registro de un prestamo...");
+                                    System.out.println("3. Volver");
+                                    itemScanOpt = Prompt.forNumber(scanner, "Seleccione la opcion que requiera: ");
+                                    switch (itemScanOpt) {
+                                        case 1 -> {
+                                            
+                                        }
+                                        case 2 -> {
+
+                                        }
+                                        default -> {
+                                            System.out.println("Que haces vato? pon algo bien");
+                                        }
+                                    }
+                                } while (itemScanOpt != 3);
+
+                            }
+                            case 2 -> {
+                                do {
+                                    System.out.println("+----------Consultas----------+");
+                                    System.out.println("1. Consulta materiales existentes...");
+                                    System.out.println("2. Consulta prestamos efectuados...");
+                                    System.out.println("3. Volver");
+                                    itemPrintOpt = Prompt.forNumber(scanner, "Seleccione una opcion: ");
+                                    switch (itemPrintOpt) {
+                                        case 1 -> {
+                                        }
+                                        case 2 -> {
+                                        }
+                                        default -> {
+                                            System.out.println("Va pero pon algo bien o kue?");
+                                        }
+                                    }
+
+                                } while (itemPrintOpt != 3);
+                            }
+                            default -> {
+                                System.out.println("Error: opcion incorrecta");
+                            }
+                        }
+
+                    } while (itemKindOpt != 3);
+
                 }
                 default ->
                     System.out.println("error: Opción incorrecta.");
             }
-        } while (opt != 3);
+        } while (opt != 4);
 
         saveToDisk(settings, "settings.dat");
         saveToDisk(users, "users.dat");

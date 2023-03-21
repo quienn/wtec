@@ -43,7 +43,7 @@ public class Student extends Person implements Model {
     public void scan(Scanner sc) {
         super.scan(sc);
         this.code = Prompt.forString(sc, "Ingrese el código de estudiante: ", false);
-        this.semester = Prompt.forNumber(sc, "Ingrese su semestre");
+        this.semester = Prompt.forNumber(sc, "Ingrese su semestre: ");
         this.career = Prompt.forString(sc, "Ingrese su carrera: ", true);
     }
 
