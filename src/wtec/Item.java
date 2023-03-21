@@ -9,6 +9,7 @@ public class Item implements Model {
     private String code;
     private int amount;
     private boolean expendable;
+    private String category;
     private LocalDateTime created;
 
     public Item() {
@@ -16,6 +17,7 @@ public class Item implements Model {
         this.code = "";
         this.amount = 0;
         this.expendable = false;
+        this.category = "";
         this.created = LocalDateTime.now();
     }
 

@@ -10,9 +10,12 @@ public class Settings implements Serializable {
     private int usersSize;
     private int itemsSize;
 
+    private int loanCount;
+
     public Settings() {
         this.itemsCount = 0;
         this.itemsSize = 0;
+        this.loanCount = 0;
     }
 
     public int getUsersCount() {
@@ -29,6 +32,14 @@ public class Settings implements Serializable {
 
     public void setUsersSize(int usersSize) {
         this.usersSize = usersSize;
+    }
+
+    public int getLoanCount() {
+        return loanCount;
+    }
+
+    public void setLoanCount(int loanCount) {
+        this.loanCount = loanCount;
     }
 
     public int getItemsSize() {
