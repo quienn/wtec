@@ -31,36 +31,34 @@ public class Item implements Model {
 
         do {
             System.out.println("+----------Tipo de categoria----------+");
-            System.out.println("1. Limpieza ");
+            System.out.println("1. Servicios generales ");
             System.out.println("2. Laboratorio");
-            System.out.println("3. Electronica (Computacion u sistemas electronicos)");
-            System.out.println("4. Cancelar");
             categoryKindOpt = Prompt.forNumber(sc, "Seleccione una opcion del menu: ");
-            switch (categoryKindOpt) {
-                case 1 -> {
-                    this.category = "limpieza";
+            if (categoryKindOpt <= 2) {
+                switch (categoryKindOpt) {
+                    case 1 -> {
+                        this.category = "limpieza";
+                    }
+                    case 2 -> {
+                        this.category = "laboratorio";
+                    }
+                    default -> {
+                        System.out.println("Error, por favor proceda a poner algo bien");
+                    }
                 }
-                case 2 -> {
-                    this.category = "laboratorio";
-                }
-                case 3 -> {
-                    this.category = "electronico";
-                }
-                default -> {
-                    System.out.println("Error, por favor proceda a poner algo bien");
-
-                }
+            } else {
+                System.out.println("error: Elige una de las opciones presentadas");
             }
-        } while (categoryKindOpt != 4 && categoryKindOpt <= 3);
+        } while (!(categoryKindOpt <= 2));
 
         do {
-            cons = Prompt.forString(sc, "Es consumible el material a registrar: \n [S] O [N]", false).toLowerCase();
-            if (!"s".equals(cons) || !"n".equals(cons)) {
-                System.out.println("Ingrese por favor solamente una de las 2 opciones: ");
+            cons = Prompt.forString(sc, "Es consumible el material a registrar: \n [S] O [N]", true).toLowerCase();
+            if ("s".equals(cons) || "n".equals(cons)) {
+                this.expendable = cons.equals("s");
             } else {
-                this.expendable = !"s".equals(cons);
+                System.out.println("Ingrese por favor solamente una de las 2 opciones: ");
             }
-        } while ((!"s".equals(cons) || !"n".equals(cons)));
+        } while (!(cons.equals("s") || cons.equals("n")));
     }
 
     @Override
