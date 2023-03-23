@@ -193,7 +193,7 @@ public class Main {
                         case 2 -> {
                             Loan newLoan = new Loan();
                             if (settings.getLoanCount() < loans.length) {
-                                newLoan.scan(scanner);
+                                newLoan.scan(scanner, users, settings.getUsersCount(), items);
                                 loans[settings.getLoanCount()] = newLoan;
                                 settings.setLoanCount(settings.getLoanCount() + 1);
                             } else {

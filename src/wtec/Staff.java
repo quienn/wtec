@@ -2,7 +2,7 @@ package wtec;
 
 import java.util.Scanner;
 
-public class Staff extends Person implements Model {
+public class Staff extends Person {
 
     private String area;
     private String job;
@@ -32,6 +32,7 @@ public class Staff extends Person implements Model {
     }
 
     public void scan(Scanner sc, boolean optional) {
+        super.scan(sc);
         this.code = Prompt.forString(sc, "Ingrese su código: ", true);
     }
 

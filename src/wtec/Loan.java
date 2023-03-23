@@ -91,7 +91,6 @@ public class Loan implements Model {
             }
         } while (pInCharge != null);
         this.inCharge = (Storer) pInCharge;
-
     }
 
     @Override
